@@ -6,6 +6,7 @@ on:
         - ".github/workflows/**"
         - "functions/**"
     branches:
+      - "build**"
       - "feature/**"
       - "perf/**"
       - "refactor/**"
@@ -25,18 +26,18 @@ jobs:
         os: [ windows-latest, macos-latest, ubuntu-latest ]
         node: [ 16, 18, 20 ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         id: git-clone
         name: Cloning repository
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
         id: install-pnpm
         name: Installing PNPM
         with:
           version: 8
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         id: set-nodejs
         with:
           node-version: ${{ matrix.node }}

@@ -1,4 +1,4 @@
-name: CD - Deploy functions
+name: CD - Deploy alpha functions
 
 on:
   push:
