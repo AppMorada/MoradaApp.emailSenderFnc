@@ -1,0 +1,1 @@
+export { EmailSenderFnc } from './emailSenderFnc';
